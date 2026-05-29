@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <title>Yusuf Turan AR</title>
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+  <style>
+    html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #000; }
+    .ar-container { width: 100%; height: 100%; position: fixed; inset: 0; overflow: hidden; }
+  </style>
+</head>
+<body>
+  <div class="ar-container">
+    <a-scene
+      mindar-image="imageTargetSrc: ./targets.mind; autoStart: true; uiLoading: yes; uiScanning: yes; uiError: yes;"
+      color-space="sRGB"
+      renderer="colorManagement: true; physicallyCorrectLights: true"
+      vr-mode-ui="enabled: false"
+      device-orientation-permission-ui="enabled: false"
+      embedded>
+
+      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+      <a-entity mindar-image-target="targetIndex: 0">
+        <a-plane
+          color="#000000"
+          opacity="0.68"
+          width="1.95"
+          height="1.22"
+          position="0 0.03 -0.03"
+          animation="property: opacity; from: 0; to: 0.68; dur: 500">
+        </a-plane>
+
+        <a-text
+          value="YUSUF TURAN"
+          color="#FFFFFF"
+          align="center"
+          position="0 0.34 0"
+          scale="0.78 0.78 0.78"
+          font="mozillavr"
+          animation="property: scale; from: 0.01 0.01 0.01; to: 0.78 0.78 0.78; dur: 900; easing: easeOutElastic"
+          animation__fade="property: opacity; from: 0; to: 1; dur: 700">
+        </a-text>
+
+        <a-text
+          value="ARTIRILMIS GERCEKLIK"
+          color="#33CCFF"
+          align="center"
+          position="0 0.02 0"
+          scale="0.43 0.43 0.43"
+          font="mozillavr"
+          animation="property: scale; from: 0.01 0.01 0.01; to: 0.43 0.43 0.43; dur: 900; delay: 350; easing: easeOutElastic"
+          animation__fade="property: opacity; from: 0; to: 1; dur: 650; delay: 350">
+        </a-text>
+
+        <a-text
+          value="2026"
+          color="#FF3333"
+          align="center"
+          position="0 -0.28 0"
+          scale="0.55 0.55 0.55"
+          font="mozillavr"
+          animation="property: scale; from: 0.01 0.01 0.01; to: 0.55 0.55 0.55; dur: 900; delay: 700; easing: easeOutElastic"
+          animation__fade="property: opacity; from: 0; to: 1; dur: 650; delay: 700"
+          animation__pulse="property: scale; from: 0.55 0.55 0.55; to: 0.65 0.65 0.65; dur: 1500; delay: 1600; dir: alternate; loop: true; easing: easeInOutSine">
+        </a-text>
+      </a-entity>
+    </a-scene>
+  </div>
+</body>
+</html>
